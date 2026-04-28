@@ -15,7 +15,7 @@
         const params = new URLSearchParams(window.location.search);
     
         const prog = params.get('prog');
-        document.title = params.get('title');
+        document.title = prog.substring(prog.lastIndexOf('/') + 1);
     
         Dos(document.getElementById("dos"), {
             url: `bin/${prog}.zip`,
