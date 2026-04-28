@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Statics, 2nd homework</title>
+    <title>program</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/js-dos.css">
     <style>
@@ -12,13 +12,18 @@
     <div id="dos" style="width: 800; height: 600;"></div>
     <script src="js/js-dos.js"></script>
     <script>
-      Dos(document.getElementById("dos"), {
-            url: "bin/EN/STATICS/ESTATHW2.zip",
+        const params = new URLSearchParams(window.location.search);
+    
+        const prog = params.get('prog');
+        document.title = params.get('title');
+    
+        Dos(document.getElementById("dos"), {
+            url: `bin/${prog}.zip`,
             autoStart: true,
             display: "full",
             emulatorFunction: "dosboxDirect",
             imageRendering: "smooth"
-      });
+        });
     </script>
 </body>
 </html>
